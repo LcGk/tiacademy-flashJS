@@ -1,6 +1,8 @@
 import { clientes } from "./data/clientes.js";
+import { produtos } from "./data/produtos.js";
 
 let currentClient = 0;
+let currentProduct = 0;
 
 let forms = {};
 class PanelForm {
@@ -73,7 +75,14 @@ window.onload = () => {
     document.getElementById("form-clients__client-next").onclick = handleNextClient;
     document.getElementById("form-clients__client-new").onclick = handleNewClient;
     document.getElementById("form-clients__client-save").onclick = handleSaveClient;
-    
+  
+    // load first product
+    updateProduct();
+
+    document.getElementById("form-products__product-prev").onclick = handlePrevProduct;
+    document.getElementById("form-products__product-next").onclick = handleNextProduct;
+    document.getElementById("form-products__product-new").onclick = handleNewProduct;
+    document.getElementById("form-products__product-save").onclick = handleSaveProduct;
 }
 
 function updateClient() {
@@ -117,5 +126,61 @@ function handleSaveClient() {
     clientes[currentClient].nomeCliente = document.getElementById("form-clients__client-name").value;
     clientes[currentClient].dataCadCli = document.getElementById("form-clients__client-date").value; 
 
-    console.log(clientes);
+    updateClient();
+}
+
+function updateProduct() {
+    document.getElementById("form-products__product-code").value = produtos[currentProduct].codProduto;
+    document.getElementById("form-products__product-desc").value = produtos[currentProduct].descProduto;
+    document.getElementById("form-products__product-price").value = new Intl.NumberFormat(
+        "pt-BR", {
+            currency: "BRL",
+            style: "currency",
+        }
+    ).format(produtos[currentProduct].precoProduto);
+    document.getElementById("form-products__product-quantity").value = produtos[currentProduct].qtdEstoqueProd;
+}
+
+function handlePrevProduct() {
+    if (--currentProduct < 0) {
+        alert("Você chegou ao início da lista de produtos!");
+        currentProduct = 0;
+    }
+
+    updateProduct();
+}
+
+function handleNextProduct() {
+    if (++currentProduct >= produtos.length) {
+        alert("Você chegou ao fim da lista de produtos!");
+        currentProduct = produtos.length - 1;
+    }
+
+    updateProduct();    
+}
+
+function handleNewProduct() {
+    currentProduct = produtos.length;
+
+    document.getElementById("form-products__product-code").value = currentProduct + 1;
+    document.getElementById("form-products__product-desc").value = "";
+    document.getElementById("form-products__product-price").value = "";
+    document.getElementById("form-products__product-quantity").value = "";
+}
+
+function fixPrice(price) {
+    price = price.replace("R$ ", "").replace(",", ".");
+    return parseFloat(price);
+}
+
+function handleSaveProduct() {
+    if (produtos[currentProduct] == undefined) {
+        produtos[currentProduct] = {};
+    }
+
+    produtos[currentProduct].codProduto = parseInt(document.getElementById("form-products__product-code").value);
+    produtos[currentProduct].descProduto = document.getElementById("form-products__product-desc").value;
+    produtos[currentProduct].precoProduto = fixPrice(document.getElementById("form-products__product-price").value); 
+    produtos[currentProduct].qtdEstoqueProd = parseInt(document.getElementById("form-products__product-quantity").value);
+    updateProduct();
 }
