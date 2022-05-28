@@ -51,5 +51,72 @@ body {
     height: 100vh;
 
     display: flex;
-    vertical-align: center;
+}
+
+#side-panel {
+    height: 100vh;
+    padding: .8rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    position: relative;
+}
+
+#side-panel::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+
+    background: var(--background);
+    filter: brightness(120%);
+}
+
+#side-panel > button {
+    padding: .6rem 1.8rem;
+
+    background: var(--yellow);
+    color: var(--black);
+
+    border: none;
+    border-radius: 4px;
+
+    font-size: 1.2rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+#side-panel > button[data-active="true"] {
+    background: var(--green);
+}
+
+#side-panel > button:hover {
+    filter: brightness(85%);
+}
+
+#side-panel > button > span {
+    font-size: 1.8rem;
+}
+
+#form-clients {
+    display: none;
+
+}
+
+#form-products {
+    display: none;
+
+}
+
+#form-orders {
+    display: none;
+    
 }
