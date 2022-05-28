@@ -88,6 +88,10 @@ form {
     font-size: 1rem;
 }
 
+.form-input > input:not(:focus) {
+    color: #aaa;
+}
+
 #form-submit {
     padding: .8rem;
 
