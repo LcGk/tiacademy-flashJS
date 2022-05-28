@@ -42,6 +42,6 @@ function handleFormSubmit(e) {
     const password = document.getElementById("password").value;
 
     if (validateUser(username, password)) {
-        window.location = "./panel";
+        window.location = "./panel.html";
     }
 }
