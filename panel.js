@@ -37,7 +37,7 @@ class PanelForm {
             form = forms[form];
 
             if (form.formId == this.formId) {
-                this.formElement.style.display = "block";
+                this.formElement.style.display = "flex";
                 this.activator.setAttribute("data-active", "true");
 
                 this.visible = true;

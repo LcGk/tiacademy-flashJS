@@ -30,15 +30,45 @@
     </div>
 
     <main>
-        <div id="form-clients">
-            clientes
+        <div class="panel-form" id="form-clients">
+            <header>
+                Clientes
+                <button class="close-form">X</button>
+            </header>
+
+            <section class="form-input-container">
+                <div class="form-input">
+                    <label for="form-clients__client-code">Código</label>
+                    <input disabled type="text" id="form-clients__client-code">
+                </div>
+                <div class="form-input">
+                    <label for="form-clients__client-name">Nome</label>
+                    <input disabled type="text" id="form-clients__client-name">
+                </div>
+                <div class="form-input">
+                    <label for="form-clients__client-date">Data Cadastro</label>
+                    <input disabled type="text" id="form-clients__client-date">
+                </div>
+            </section>
+
+            <section class="form-button-container">
+                <div>
+                    <button class="form-button" id="form-clients__client-prev"><</button>
+                    <button class="form-button" id="form-clients__client-next">></button>
+                </div>
+                <div>
+                    <button class="form-button" id="form-clients__client-new">Novo</button>
+                    <button class="form-button" id="form-clients__client-save">Salvar</button>
+                </div>
+            </section>
+
         </div>
 
-        <div id="form-products">
+        <div class="panel-form" id="form-products">
             produtos
         </div>
 
-        <div id="form-orders">
+        <div class="panel-form" id="form-orders">
             pedidos
         </div>
     </main>
