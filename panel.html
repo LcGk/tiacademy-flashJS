@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="panel.css">
 
-    <script src="panel.js"></script>
+    <script type="module" src="panel.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="form-input">
                     <label for="form-clients__client-name">Nome</label>
-                    <input disabled type="text" id="form-clients__client-name">
+                    <input type="text" id="form-clients__client-name">
                 </div>
                 <div class="form-input">
                     <label for="form-clients__client-date">Data Cadastro</label>
@@ -61,11 +61,43 @@
                     <button class="form-button" id="form-clients__client-save">Salvar</button>
                 </div>
             </section>
-
         </div>
 
         <div class="panel-form" id="form-products">
-            produtos
+            <header>
+                Produtos
+                <button class="close-form">X</button>
+            </header>
+
+            <section class="form-input-container">
+                <div class="form-input">
+                    <label for="form-products__product-code">Código</label>
+                    <input disabled type="text" id="form-products__product-code">
+                </div>
+                <div class="form-input">
+                    <label for="form-products__product-desc">Descrição</label>
+                    <input type="text" id="form-products__product-desc">
+                </div>
+                <div class="form-input">
+                    <label for="form-products__product-price">Preço</label>
+                    <input type="text" id="form-products__product-price">
+                </div>
+                <div class="form-input">
+                    <label for="form-products__product-quantity">Quantidade</label>
+                    <input type="text" id="form-products__product-quantity">
+                </div>
+            </section>
+
+            <section class="form-button-container">
+                <div>
+                    <button class="form-button" id="form-products__product-prev"><</button>
+                    <button class="form-button" id="form-products__product-next">></button>
+                </div>
+                <div>
+                    <button class="form-button" id="form-products__product-new">Novo</button>
+                    <button class="form-button" id="form-products__product-save">Salvar</button>
+                </div>
+            </section>
         </div>
 
         <div class="panel-form" id="form-orders">

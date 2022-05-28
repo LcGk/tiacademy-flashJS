@@ -177,6 +177,10 @@ main {
     padding: .4rem;
 }
 
+.panel-form > .form-input-container > .form-input > input:disabled {
+    color: #aaa;
+}
+
 .panel-form > .form-button-container {
     padding: .8rem;
 
@@ -209,5 +213,17 @@ main {
 }
 
 .panel-form > .form-button-container #form-clients__client-save {
+    background: var(--yellow);
+}
+
+.panel-form > .form-button-container #form-products__product-prev, #form-products__product-next {
+    background: var(--purple);
+}
+
+.panel-form > .form-button-container #form-products__product-new {
+    background: var(--green);
+}
+
+.panel-form > .form-button-container #form-products__product-save {
     background: var(--yellow);
 }
