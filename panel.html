@@ -101,7 +101,63 @@
         </div>
 
         <div class="panel-form" id="form-orders">
-            pedidos
+            <div class="panel-form">
+                <header>
+                    Pedidos
+                    <button class="close-form">X</button>
+                </header>
+    
+                <section class="form-input-container">
+                    <div class="form-input">
+                        <label for="form-orders__client-code">Código do Cliente</label>
+                        <input type="text" id="form-orders__client-code">
+                    </div>
+                    <div class="form-input">
+                        <label for="form-orders__client-name">Cliente</label>
+                        <input disabled type="text" id="form-orders__client-name">
+                    </div>
+                    
+                </section>
+    
+                <section class="locate-product-container">
+                    <header>Localizar Produto</header>
+                    <div>
+                        <input type="text" id="form-orders__product-code" placeholder="Código">
+                        <input disabled type="text" id="form-orders__product-desc" placeholder="Descrição">
+                        <input disabled type="text" id="form-orders__product-price" placeholder="Preço">
+                        <input type="text" id="form-orders__product-quantity" placeholder="Quantidade">
+                        <button id="form-orders__create-order">Lançar no Pedido</button>
+                    </div>
+                </section>
+            </div>
+
+            <div class="panel-form orders-container">
+                <header>Itens do Pedido</header>
+                <table>
+                    <thead>
+                        <tr></tr>
+                        <tr>
+                            <th>Item</th>
+                            <th>Descrição</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Sub Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="order-contents">
+                        <!-- <tr>
+                            <th>1</th>
+                            <td>fodase</td>
+                            <td>R$32,00</td>
+                            <td>2</td>
+                            <td>R$64,00</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                <div id="order-total">
+                    TOTAL: R$ 0,00
+                </div>
+            </div>
         </div>
     </main>
 </body>

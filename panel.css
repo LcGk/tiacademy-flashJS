@@ -107,8 +107,6 @@ main {
 
     margin: 2rem auto auto auto;
 
-    width: auto;
-
     background: var(--background);
     color: var(--white);
 
@@ -117,9 +115,7 @@ main {
     border-radius: 4px;
     overflow-x: hidden;
 
-    /* display: flex; */
     flex-direction: column;
-    /* gap: .8rem; */
 }
 
 .panel-form > header {
@@ -164,8 +160,6 @@ main {
 }
 
 .panel-form > .form-input-container > .form-input > input {
-    opacity: 1;
-
     background: var(--light-background);
     color: var(--white);
 
@@ -204,6 +198,7 @@ main {
     font-weight: 600;
 }
 
+/* Clients Form Specific */
 .panel-form > .form-button-container #form-clients__client-prev, #form-clients__client-next {
     background: var(--purple);
 }
@@ -216,6 +211,8 @@ main {
     background: var(--yellow);
 }
 
+
+/* Products Form Specific */
 .panel-form > .form-button-container #form-products__product-prev, #form-products__product-next {
     background: var(--purple);
 }
@@ -226,4 +223,118 @@ main {
 
 .panel-form > .form-button-container #form-products__product-save {
     background: var(--yellow);
+}
+
+
+/* Orders Form Specific */
+#form-orders {
+    flex-direction: row;
+    gap: 2rem;
+    box-shadow: none;
+}
+
+#form-orders > div {
+    display: flex;
+    margin: 0;
+}
+
+#form-orders > div > .locate-product-container {
+    padding: .8rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+#form-orders > div > .locate-product-container > header {
+    border-top: .2rem solid var(--light-background);
+    padding-top: .4rem;
+}
+
+#form-orders > div > .locate-product-container input {
+    background: var(--light-background);
+    color: var(--white);
+
+    border: none;
+    border-radius: 4px;
+
+    font-size: .9rem;
+    
+    padding: .6rem .4rem;
+}
+
+#form-orders > div > .locate-product-container > div {
+    display: grid;
+    gap: .4rem;
+}
+
+#form-orders__create-order {
+    padding: .6rem;
+
+    border: none;
+    border-radius: 4px;
+
+    background: var(--purple);
+    color: var(--white);
+
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.orders-container {
+    width: 50vw;
+
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.orders-container > table {
+    /* padding: .8rem; */
+    border-collapse: collapse;
+    border-radius: 4px;
+    overflow-x: hidden;
+}
+
+.orders-container > table > thead {
+    color: var(--green);
+}
+
+.orders-container > table th {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.orders-container > table th:not(:last-child), td:not(:last-child) {
+    border-right: .1rem solid var(--light-background);
+}
+
+.orders-container > table th, td {
+    padding: .8rem;
+    margin: 0 4rem;
+
+    text-align: center;
+}
+
+.orders-container > table tr:nth-child(even) {
+    background: var(--background);
+}
+
+.orders-container > table tr:nth-child(odd) {
+    background: var(--light-background);
+}
+
+#order-total {
+    margin-top: auto;
+
+    width: 100%;
+
+    padding: .8rem;
+
+    background: var(--light-background);
+
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    color: var(--yellow);
 }
